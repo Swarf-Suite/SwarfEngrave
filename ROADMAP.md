@@ -2,7 +2,7 @@
 
 SwarfEngrave is a design-and-carve editor for 2D work: lay out shapes, text in any installed font and imported
 images on a grid the size of your stock, give each object its own depth and cut type, check the carve in 3D, and
-send G-code to SwarfGRBL. It is a native Mac app in the Swarf Suite style: Swift 6, SwiftUI with AppKit where
+send G-code to SwarfGRBL. It is a native Mac app with the Swarf Suite look: Swift 6, SwiftUI with AppKit where
 SwiftUI falls short (font panel, text layout), Metal and Core Text, SwiftPM only, macOS 26.
 
 ## Design independence
@@ -10,7 +10,7 @@ SwarfEngrave offers the capabilities people expect from browser-based hobby CNC 
 text, image tracing, a live preview), but its interface, wording, icons, file format and artwork are its own and
 follow the Swarf Suite, not any other product. Ground rules:
 - No copying another product's layout, panel arrangement, icons, colour scheme, terminology, sample projects or
-  help text. Build from SwarfPath's window structure and macOS conventions instead.
+  help text. Build from SwarfPath's window structure, SwarfGRBL's theme and macOS conventions instead.
 - SF Symbols and our own drawn icons only. No bundled third-party fonts or clip art unless their licence allows it.
 - No reading or writing another product's own project format. SVG and DXF are open formats and are the way in.
 - Don't name other products in the app, the docs or the website.
@@ -39,10 +39,19 @@ SwarfPath's `CAMCore` already has most of what an engraving app needs. Move it i
 - SwarfPath's tests must pass unchanged on the shared package before SwarfEngrave depends on it.
 
 ## Phase 2: editor
-The window follows SwarfPath, so the two apps feel like one family: a `NavigationSplitView` with a sidebar, the
-canvas in the middle, a native `.inspector` column on the right and a standard macOS toolbar. SwarfEngrave's own
-accent is the sage green of swarfengrave.app (`#7cc4a6`); everything else is system colours and materials, light and
-dark mode.
+The window is arranged like SwarfPath: a `NavigationSplitView` with a sidebar, the canvas in the middle, a native
+`.inspector` column on the right and a macOS toolbar.
+
+It is styled like SwarfGRBL, the gm-guitars look. Share SwarfGRBL's `Theme.swift` (move it into a small shared
+package, or copy it to begin with) rather than redrawing it:
+- Dark only: obsidian (`#121212`) behind the canvas, slate panels (`#1e1e1e`/`#262626`/`#303030`), thin `line`
+  dividers.
+- A warm gold accent (`#c5a059`, `goldBright` for highlights, `goldDim` for selected fills); off-white text and
+  steel for secondary text.
+- Section headings in wide-tracked capitals (`Eyebrow`), buttons with `SGButtonStyle` (primary gold for Make
+  Toolpaths and Send, outline gold, ghost), `ok`/`warn`/`danger` colours for checks.
+- The app name in gold tracked capitals at the left of the toolbar, as SwarfGRBL's top bar has it.
+- Monospaced figures (`Font.mono`) for coordinates, depths and times.
 - **Sidebar**, a `List` in sections, as in SwarfPath:
   - *Setup*: Stock (size, thickness, species with a colour swatch), Work Zero, Machine & Bits.
   - *Design*: the object tree, grouped by cut depth (e.g. "Surface · 0.5 mm", "Pocket · 3 mm", "Through"), each
@@ -92,7 +101,7 @@ Every object carries its own cut, set in the inspector's *Cut* section, so a sig
   - *Pocket*: clears the whole area to depth.
   - *V-carve*: depth from the bit angle and the shape's width (Phase 5).
 - **Tabs** for through profiles: on/off, length, height, count; drag them along the edge on the canvas in tab mode.
-- **Depth colours on the canvas**: objects are filled with the accent hue, lighter for shallow and stronger for deep,
+- **Depth colours on the canvas**: objects are filled in gold, pale for shallow and rich for deep,
   with a small depth key in the canvas corner; through cuts are drawn as a dashed outline, and engraved lines as a
   stroke the width of the bit.
 - **Overlaps**: the deeper cut wins where pockets overlap; a shallower object inside a deeper pocket stays as a
