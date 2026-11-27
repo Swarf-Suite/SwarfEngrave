@@ -120,6 +120,8 @@ Every object carries its own cut, set in the inspector's *Cut* section, so a sig
   subtitle as SwarfPath shows stock size.
 - Problems in a list under the sidebar and as badges on the canvas: details narrower than the bit, depth past the
   stock, a V-bit deeper than its cutting length, objects off the stock.
+- Passed checks show a tick icon (`checkmark.circle.fill`) as well as colour, because the theme's `ok` green is close
+  to the sage accent; warnings and errors likewise carry their own symbols, never colour alone.
 
 ## Phase 5: V-carve in depth
 - True V-carve from closed regions: the bit follows the medial axis with depth from the distance to the edge and
