@@ -46,11 +46,13 @@ It is styled like SwarfGRBL, the gm-guitars look. Share SwarfGRBL's `Theme.swift
 package, or copy it to begin with) rather than redrawing it:
 - Dark only: obsidian (`#121212`) behind the canvas, slate panels (`#1e1e1e`/`#262626`/`#303030`), thin `line`
   dividers.
-- A warm gold accent (`#c5a059`, `goldBright` for highlights, `goldDim` for selected fills); off-white text and
+- SwarfEngrave's own accent, the sage green of swarfengrave.app (`#7cc4a6`), in place of SwarfGRBL's gold, the way
+  the three websites share one stylesheet and each sets its own `--accent`. The theme's `gold`, `goldBright` and
+  `goldDim` become an app-supplied `accent`, `accentBright` and `accentDim`. Off-white text and
   steel for secondary text.
-- Section headings in wide-tracked capitals (`Eyebrow`), buttons with `SGButtonStyle` (primary gold for Make
-  Toolpaths and Send, outline gold, ghost), `ok`/`warn`/`danger` colours for checks.
-- The app name in gold tracked capitals at the left of the toolbar, as SwarfGRBL's top bar has it.
+- Section headings in wide-tracked capitals (`Eyebrow`), buttons with `SGButtonStyle` (primary accent for Make
+  Toolpaths and Send, outline accent, ghost), `ok`/`warn`/`danger` colours for checks.
+- The app name in sage green tracked capitals at the left of the toolbar, as SwarfGRBL's top bar has it.
 - Monospaced figures (`Font.mono`) for coordinates, depths and times.
 - **Sidebar**, a `List` in sections, as in SwarfPath:
   - *Setup*: Stock (size, thickness, species with a colour swatch), Work Zero, Machine & Bits.
@@ -101,7 +103,7 @@ Every object carries its own cut, set in the inspector's *Cut* section, so a sig
   - *Pocket*: clears the whole area to depth.
   - *V-carve*: depth from the bit angle and the shape's width (Phase 5).
 - **Tabs** for through profiles: on/off, length, height, count; drag them along the edge on the canvas in tab mode.
-- **Depth colours on the canvas**: objects are filled in gold, pale for shallow and rich for deep,
+- **Depth colours on the canvas**: objects are filled in sage green, pale for shallow and rich for deep,
   with a small depth key in the canvas corner; through cuts are drawn as a dashed outline, and engraved lines as a
   stroke the width of the bit.
 - **Overlaps**: the deeper cut wins where pockets overlap; a shallower object inside a deeper pocket stays as a
