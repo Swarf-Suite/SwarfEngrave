@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key><string>en</string>
+	<key>CFBundleDisplayName</key><string>SwarfEngrave</string>
+	<key>CFBundleName</key><string>SwarfEngrave</string>
+	<key>CFBundleExecutable</key><string>SwarfEngrave</string>
+	<key>CFBundleIdentifier</key><string>io.github.swarf-suite.swarfengrave</string>
+	<key>CFBundleIconFile</key><string>AppIcon</string>
+	<key>CFBundlePackageType</key><string>APPL</string>
+	<key>CFBundleShortVersionString</key><string>0.1.0</string>
+	<key>CFBundleVersion</key><string>1</string>
+	<key>LSMinimumSystemVersion</key><string>26.0</string>
+	<key>LSApplicationCategoryType</key><string>public.app-category.graphics-design</string>
+	<key>NSHighResolutionCapable</key><true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key><true/>
+	</dict>
+	<key>NSHumanReadableCopyright</key><string>MIT License — SwarfEngrave contributors</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key><string>SwarfEngrave Design</string>
+			<key>CFBundleTypeRole</key><string>Editor</string>
+			<key>LSHandlerRank</key><string>Owner</string>
+			<key>LSItemContentTypes</key><array><string>io.github.swarf-suite.swarfengrave</string></array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key><string>Artwork</string>
+			<key>CFBundleTypeRole</key><string>Viewer</string>
+			<key>LSHandlerRank</key><string>Alternate</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.svg-image</string>
+				<string>com.autodesk.dxf</string>
+				<string>com.adobe.pdf</string>
+				<string>public.png</string>
+				<string>public.jpeg</string>
+				<string>public.tiff</string>
+			</array>
+		</dict>
+	</array>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeIdentifier</key><string>io.github.swarf-suite.swarfengrave</string>
+			<key>UTTypeDescription</key><string>SwarfEngrave Design</string>
+			<key>UTTypeConformsTo</key><array><string>public.json</string><string>public.data</string></array>
+			<key>UTTypeTagSpecification</key><dict><key>public.filename-extension</key><array><string>swarfengrave</string></array></dict>
+		</dict>
+	</array>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeIdentifier</key><string>com.autodesk.dxf</string>
+			<key>UTTypeDescription</key><string>DXF Drawing</string>
+			<key>UTTypeConformsTo</key><array><string>public.data</string></array>
+			<key>UTTypeTagSpecification</key><dict><key>public.filename-extension</key><array><string>dxf</string><string>DXF</string></array></dict>
+		</dict>
+		<dict>
+			<key>UTTypeIdentifier</key><string>public.svg-image</string>
+			<key>UTTypeDescription</key><string>SVG Image</string>
+			<key>UTTypeConformsTo</key><array><string>public.image</string><string>public.xml</string></array>
+			<key>UTTypeTagSpecification</key><dict><key>public.filename-extension</key><array><string>svg</string></array></dict>
+		</dict>
+	</array>
+</dict>
+</plist>
