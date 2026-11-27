@@ -1,8 +1,9 @@
 # SwarfEngrave
 
 **V-carve design and G-code for hobby CNC, native on the Mac.** SwarfEngrave is for signs, plaques, inlays,
-headstock logos and lettering: draw or import 2D artwork (text, SVG, DXF), choose V-bits and depths, see the
-carve in 3D, and get G-code that SwarfGRBL sends to the machine.
+headstock logos and lettering. Lay out shapes, text and imported images (SVG, DXF, traced bitmaps) on a grid the
+size of your stock, give each object its own depth and cut type (outline, fill or V-carve), watch the carve update
+in 3D beside the design, and get G-code that SwarfGRBL sends to the machine.
 
 > **Status: planned.** There's no code yet. This repo holds the plan; see [ROADMAP.md](ROADMAP.md).
 
